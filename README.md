@@ -1,9 +1,9 @@
-## ELAG — Simulation eines schiefen Kreisels mit Lagrange-Mechanik
+# ELAG — Simulation eines schiefen Kreisels mit Lagrange-Mechanik
 
 ELAG („Euler-Lagrange Analysis for Gyroscopes“) ist ein Jupyter-Notebook, das die Bewegung eines schiefen Kreisels mithilfe der Lagrange-Mechanik symbolisch und numerisch analysiert.
 Das Projekt dient als physikalische und mathematische Exploration eines Kreisels mit einem seitlich versetzten Massepunkt (Offset Gyroscope).
 
-Ziel des Projekts:
+### Ziel des Projekts:
 
 Das Ziel ist es, die Dynamik eines Kreisels zu verstehen, der durch eine exzentrische Masse beeinflusst wird.
 Dazu kombiniert das Notebook:
@@ -27,7 +27,7 @@ Lehrmaterial im Bereich klassische Mechanik
 eigene physikalische Experimente
 genutzt werden.
 
-Inhalt:
+### Inhalt:
 
 Das Notebook besteht aus folgenden Abschnitten:
 
@@ -52,7 +52,7 @@ Zeitverläufe der Winkel
 
 Dynamische Interpretation
 
-Verwendung:
+### Verwendung:
 
 Das Projekt wird direkt als Jupyter-Notebook ausgeführt.
 
@@ -96,7 +96,7 @@ Vollständig dokumentierter Rechenweg
 
 Physikalisch motiviertes Beispiel eines realen rotierenden Systems
 
-Lizenz — MIT License
+### Lizenz — MIT License
 
 Dieses Projekt wird unter der MIT-Lizenz veröffentlicht.
 Das bedeutet:
@@ -111,15 +111,7 @@ auch kommerzielle Nutzung erlaubt
 
 Solange der Copyright-Hinweis erhalten bleibt.
 
-Autor:
+## Autor:
 
-muka xhoiel 
+Xhoiel Muka 
 GitHub: https://github.com/mukaxhoiel
-
-## Bildrechte
-Der Quellcode steht unter der MIT-Lizenz.  
-Alle Bilder im Ordner `/HandNotizen` stehen jedoch unter der Lizenz 
-**CC BY-NC-ND 4.0**.  
-Sie dürfen heruntergeladen und privat genutzt werden, aber eine 
-Weiterverwendung, Veröffentlichung oder kommerzielle Nutzung ist ohne meine 
-schriftliche Zustimmung nicht gestattet.
