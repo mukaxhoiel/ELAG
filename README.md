@@ -68,7 +68,7 @@ jupyter notebook ELAG_Notebook.ipynb
 
 Danach kannst du jeden Abschnitt einzeln ausführen, die Herleitungen ansehen und die Simulationen starten.
 
-Abhängigkeiten
+### Abhängigkeiten:
 
 Python 3.8+
 
