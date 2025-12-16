@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # -----------------------------
 # Symbolic definitions
-g, m, R, l = sp.symbols('g m R l', positive=True)
+g, R, l = sp.symbols('g R l', positive=True)
 psi_0, psi_dot_0, phi_dot_0, theta_dot_0 = sp.symbols('psi_0 psi_dot_0 phi_dot_0 theta_dot_0', real=True)
 psi, psi_dot, phi_dot, theta_dot = sp.symbols('psi psi_dot phi_dot theta_dot', real=True)
 
@@ -13,12 +13,12 @@ psi, psi_dot, phi_dot, theta_dot = sp.symbols('psi psi_dot phi_dot theta_dot', r
 h = -l * sp.sin(psi)
 r_s = sp.Matrix([l, 0, 0])
 omega = sp.Matrix([theta_dot - sp.sin(psi) * phi_dot, psi_dot, sp.cos(psi) * phi_dot])
-TraegheitsmomentS = 0.25 * m * R**2 * sp.Matrix([[2, 0, 0], [0, 1, 0], [0, 0, 1]])
+Traegheitsmoment_s = 0.25 * R**2 * sp.Matrix([[2, 0, 0], [0, 1, 0], [0, 0, 1]])
 v_s = omega.cross(r_s)
 
 # Energies
-E_pot = m * g * h
-E_kin = 0.5 * m * v_s.dot(v_s) + 0.5 * omega.dot(TraegheitsmomentS * omega)
+E_pot = g * h
+E_kin = 0.5 * v_s.dot(v_s) + 0.5 * omega.dot(Traegheitsmoment_s * omega)
 Lagrangian = E_kin - E_pot
 
 # Partial derivatives
@@ -46,7 +46,6 @@ psi_ddot_sym = psi_ddot.subs(DLagrangian_Ddpsi_dt, DLagrangian_Dpsi.subs({phi_do
 # Parameters
 # -----------------------------
 g0 = 9.81 # m/s^2
-m0 = 10 # kg
 R0 = 0.125 # m
 l0 = R0 # m
 psi_00 = 0 # rad
@@ -55,7 +54,7 @@ phi_dot_00 = 0 # rad/s
 theta_dot_00 = 10 * 2 * np.pi # rad/s
 T = 1 # total time in seconds
 
-param_subs = {g: g0, m: m0, R: R0, l: l0,
+param_subs = {g: g0, R: R0, l: l0,
               psi_0: psi_00, psi_dot_0: psi_dot_00,
               phi_dot_0: phi_dot_00, theta_dot_0: theta_dot_00}
 
@@ -103,9 +102,9 @@ plt.plot(t, psi_sol, linewidth=2)
 plt.plot(t, psi_dot_sol, linewidth=2)
 plt.plot(t, const, 'r')
 plt.xlabel('t [s]')
-plt.ylabel(r'$\psi(t)\ [rad],\  \dot{\psi}(t)\ [rad/s]$')
+plt.ylabel(r'$\psi(t)\ [\mathrm{rad}],\  \dot{\psi}(t)\ [\mathrm{rad/s}]$')
 plt.title(r'Nutation')
-plt.legend([r'$\psi(t)$', r'$\dot{\psi}(t)$', r'$\psi = 0.5\pi$'], loc='best')
+plt.legend([r'$\psi(t)$', r'$\dot{\psi}(t)$', r'$\psi = \frac{\pi}{2}$'], loc='best')
 plt.grid(True)
 
 # Phi plot
@@ -114,7 +113,7 @@ plt.plot(t, phi_sol, linewidth=2)
 plt.plot(t, phi_dot_sol, linewidth=2)
 plt.plot(t, 2*const, 'r')
 plt.xlabel('t [s]')
-plt.ylabel(r'$\phi(t)\ [rad],\  \dot{\phi}(t)\ [rad/s]$')
+plt.ylabel(r'$\phi(t)\ [\mathrm{rad}],\  \dot{\phi}(t)\ [\mathrm{rad/s}]$')
 plt.title(r'Precession')
 plt.legend([r'$\phi(t)$', r'$\dot{\phi}(t)$', r'$\phi = \pi$'], loc='best')
 plt.grid(True)
@@ -125,7 +124,7 @@ plt.plot(t, theta_sol, linewidth=2)
 plt.plot(t, theta_dot_sol, linewidth=2)
 plt.plot(t, 4*const, 'r')
 plt.xlabel('t [s]')
-plt.ylabel(r'$\theta(t)\ [rad],\  \dot{\theta}(t)\ [rad/s]$')
+plt.ylabel(r'$\theta(t)\ [\mathrm{rad}],\  \dot{\theta}(t)\ [\mathrm{rad/s}]$')
 plt.title(r'Spin')
 plt.legend([r'$\theta(t)$', r'$\dot{\theta}(t)$', r'$\theta = 2\pi$'], loc='best')
 plt.grid(True)
